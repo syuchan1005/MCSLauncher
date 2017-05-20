@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.syuchan1005.mcslauncher.Controller">
+    <children>
+        <JFXTabPane maxHeight="100.0" maxWidth="1.7976931348623157E308" minHeight="125.0" prefHeight="125.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Control">
+                    <content>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <JFXButton fx:id="startButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#startClick" prefHeight="96.0" prefWidth="52.0" text="Start">
+                                    <graphic>
+                                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@icons/start.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="stopButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#stopClick" prefHeight="95.0" prefWidth="63.0" text="Stop">
+                                    <graphic>
+                                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@icons/stop.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="reloadButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#reloadClick" prefHeight="100.0" prefWidth="45.0" text="Reload">
+                                    <graphic>
+                                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@icons/reload.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="rebootButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#rebootClick" prefHeight="97.0" prefWidth="17.0" text="Reboot">
+                                    <graphic>
+                                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@icons/reboot.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="forceStopButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#forceStopClick" prefHeight="110.0" prefWidth="54.0" text="ForceStop">
+                                    <graphic>
+                                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@icons/destroy.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                            </children>
+                        </HBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </JFXTabPane>
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox maxHeight="1.7976931348623157E308" prefWidth="415.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <TableView fx:id="consoleArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="239.0" prefWidth="415.0" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="timeColumn" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" resizable="false" sortable="false" text="Time" />
+                        <TableColumn fx:id="msgColumn" minWidth="-Infinity" prefWidth="347.0" text="Message" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy></TableView>
+                        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                            <children>
+                                <JFXCheckBox fx:id="sayCheckBox" mnemonicParsing="false" prefHeight="27.0" prefWidth="54.0" text="say">
+                           <font>
+                              <Font size="11.0" />
+                           </font></JFXCheckBox>
+                                <JFXTextField fx:id="commandBox" onKeyPressed="#commandPress" prefHeight="27.0" prefWidth="313.0" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                                </JFXTextField>
+                                <JFXButton fx:id="sendButton" mnemonicParsing="false" onAction="#sendClick" prefHeight="31.0" prefWidth="40.0" text="送信" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <JFXListView fx:id="playerListView" maxWidth="185.0" minWidth="185.0" prefHeight="250.0" prefWidth="185.0" HBox.hgrow="ALWAYS" />
+            </children>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </HBox>
+    </children>
+</VBox>
