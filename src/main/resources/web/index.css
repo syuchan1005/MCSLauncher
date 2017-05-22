@@ -1,0 +1,131 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+header > img {
+    margin-right: 5px;
+}
+
+.tab {
+    height: 35px;
+    background-color: #00b3ca;
+    color: #ffffff;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.6);
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.tab > div {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%;
+}
+
+.tab > .active {
+    height: calc(100% - 2px);
+    border-bottom: solid 2px #f3f386;
+}
+
+.tab-content {
+    border-bottom: solid 1px #cdcdcd;
+}
+
+.tab-content > .control {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.tab-content > .control > .button {
+    width: 63px;
+    height: 90px;
+    font-size: 12px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.content {
+    display: flex;
+    height: 60vh;
+}
+
+.content > .left {
+    width: 70%;
+}
+
+.content > .left > .table {
+    height: 100%;
+}
+
+.content > .left > .table > .head {
+    background-color: #e4e4e4;
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.content > .left > .table > .table-body {
+    width: 100%;
+    height: 100%;
+    background-color: #fcfcfc;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.content > .left > .table > .table-body > .body {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.content > .left > .table > .table-body > .body > tbody > tr > th {
+    width: calc(100% - 70px);
+    text-overflow: clip;
+    text-wrap: none;
+    text-align: left;
+}
+
+.content > .left > .table > .table-body > .body > tbody > tr > .time {
+    text-align: center;
+}
+
+.time {
+    min-width: 70px;
+    width: 70px;
+    max-width: 70px;
+    border-right: solid 1px #adadad;
+}
+
+.content > .left > .inputs {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.content > .left > .inputs > input, label {
+    margin-right: 5px;
+}
+
+.content > .left > .inputs > #say {
+    width: 20px;
+}
+
+.content > .left > .inputs > #command {
+    width: 100%;
+}
+
+.content > .right {
+    width: 30%;
+    height: 100%;
+    border: solid 1px #cdcdcd;
+    border-top: none;
+}

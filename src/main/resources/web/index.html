@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MCSLauncher Web</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <img src="icons/app.png" height="20" width="20"/>
+            <div>MCSLauncher (Minecraft Server Launcher)</div>
+        </header>
+        <div class="tab">
+            <div class="control active">Control</div>
+        </div>
+        <div class="tab-content">
+            <div class="control">
+                <div class="button">
+                    <img src="icons/start.png" height="55" width="55"/>
+                    <div>Start</div>
+                </div>
+                <div class="button">
+                    <img src="icons/stop.png" height="55" width="55"/>
+                    <div>Stop</div>
+                </div>
+                <div class="button">
+                    <img src="icons/reload.png" height="55" width="55"/>
+                    <div>Reload</div>
+                </div>
+                <div class="button">
+                    <img src="icons/reboot.png" height="55" width="55"/>
+                    <div>Reboot</div>
+                </div>
+                <div class="button">
+                    <img src="icons/destroy.png" height="55" width="55"/>
+                    <div>ForceStop</div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left">
+                <div class="table">
+                    <table class="head">
+                        <thead>
+                        <tr>
+                            <th class="time">Time</th>
+                            <th>Message</th>
+                        </tr>
+                        </thead>
+                    </table>
+                    <div class="table-body">
+                        <table class="body">
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="checkbox" id="say"><label for="say">Say</label>
+                    <input type="text" id="command">
+                    <input type="button" value="送信">
+                </div>
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+    </body>
+</html>
