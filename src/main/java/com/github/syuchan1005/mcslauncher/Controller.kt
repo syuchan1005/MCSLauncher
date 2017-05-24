@@ -101,10 +101,6 @@ class Controller : Initializable {
         cellValueFactory = PropertyValueFactory<S, T>(property)
     }
 
-    fun isWindows(): Boolean {
-        return System.getProperty("os.name").startsWith("Windows");
-    }
-
     @FXML
     fun startClick() {
         Thread({

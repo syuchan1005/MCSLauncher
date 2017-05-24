@@ -13,6 +13,7 @@ import java.io.FileOutputStream
 import java.net.URI
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
+import java.util.concurrent.TimeUnit
 import java.util.jar.JarFile
 
 /**
@@ -39,6 +40,8 @@ class MCSLauncher : Application() {
                 if (args.size >= 2) port = args[1].toInt()
                 Spark.port(port)
                 Spark.externalStaticFileLocation(File("web/").absolutePath)
+                Spark.webSocketIdleTimeoutMillis(180000) // 3min
+                Spark.webSocket("/sock", WebSocketController::class.java)
                 Spark.init()
                 println("PageURL: localhost:" + port)
             } else {
@@ -85,4 +88,8 @@ fun copyFile(folder: String) {
             })
         }
     }
+}
+
+fun isWindows(): Boolean {
+    return System.getProperty("os.name").startsWith("Windows");
 }
